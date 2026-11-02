@@ -11,6 +11,7 @@ function M.load()
     vim.g.colors_name = "zero"
 
     require("zero.highlights").apply()
+    require("zero.groups.treesitter").apply()
 end
 
 return M
