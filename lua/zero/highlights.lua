@@ -1,66 +1,206 @@
-local palette = require("zero.palette").colors
+local p = require("zero.palette").colors
 
 local M = {}
 
+local function set(group, opts)
+    vim.api.nvim_set_hl(0, group, opts)
+end
+
 function M.apply()
-    local highlights = {
-        Normal = {
-            fg = palette.fg,
-            bg = palette.bg,
-        },
+    -- Editor
+    set("Normal", {
+        fg = p.fg,
+        bg = p.bg,
+    })
 
-        NormalFloat = {
-            fg = palette.fg,
-            bg = palette.bg_alt,
-        },
+    set("NormalNC", {
+        fg = p.fg_alt,
+        bg = p.gb,
+    })
 
-        Comment = {
-            fg      = palette.muted,
-            italic  = true,
-        },
+    set("NormalFloat", {
+        fg = p.fg,
+        bg = p.bg_alt,
+    })
 
-        String = {
-            fg = palette.saber,
-        },
+    set("FloatBorder", {
+        fg = p.crimson,
+        bg = p.bg_alt,
+    })
 
-        Function = {
-            fg = palette.crystal,
-        },
+    set("WinSeparator", {
+        fg = p.crimson,
+        bg = p.bg,
+    })
 
-        Keyword = {
-            fg   = palette.zero_red,
-            bold = true,
-        },
+    set("LineNr", {
+        fg = p.subtle,
+        bg = p.bg,
+    })
 
-        Type = {
-            fg = palette.armor_red,
-        },
+    set("CursorLineNr", {
+        fg   = p.gold,
+        bg   = p.bg,
+        bold = true,
+    })
 
-        Number = {
-            fg = palette.gold,
-        },
+    set("CursosLine", {
+        bg = p.bg_alt,
+    })
 
-        Boolean = {
-            fg = palette.gold,
-        },
+    set("SignColumn", {
+        fg = p.muted,
+        bg = p.bg,
+    })
 
-        Visual = {
-            bg = palette.surface,
-        },
+    set("ColorColumn", {
+        bg = p.bg_alt,
+    })
 
-        Search = {
-            fg = palette.bg,
-            bg = palette.gold,
-        },
+    set("Visual", {
+        bg = p.surface_light,
+    })
 
-        Error = {
-            fg = palette.armor_red,
-        },
-    }
+    set("Search", {
+        fg   = p.bg,
+        bg   = p.gold,
+        bold = true,
+    })
 
-    for group, opts in pairs(highlights) do
-        vim.api.nvim_set_hl(0, group, opts)
-    end
+    set("IncSearch", {
+        fg = p.bg,
+        bg = p.saber,
+        bold = true,
+    })
+
+    set("MatchParen", {
+        fg   = p.saver,
+        bold = true,
+    })
+
+    -- Popup menu
+    set("Pmenu", {
+        fg = p.fg,
+        bg = p.surface,
+    })
+
+    set("PmenuSel", {
+        fg   = p.bg,
+        bg   = p.zero_red,
+        bold = true,
+    })
+
+    set("PmenuSbar", {
+        bg = p.surface_ligght,
+    })
+
+    set("PmenuThumb", {
+        bg = p.crimson,
+    })
+
+    -- Basic syntax
+    set("Comment", {
+        fg     = p.muted,
+        italic = trrue,
+    })
+
+    set("String", {
+        fg = p.saberr_dim,
+    })
+
+    set("Character", {
+        fg = p.saber,
+    })
+
+    set("Number", {
+        fg = p.gold,
+    })
+
+    set("Boolean", {
+        fg   = p.gold,
+        bold = true,
+    })
+
+    set("Float", {
+        fg = p.gold,
+    })
+
+    set("Function", {
+        fg = p.crystal,
+    })
+
+    set("Identifier", {
+        fg = p.fg,
+    }) 
+
+    set("Keyword", {
+        fg = p.zero_red,
+        bold = true,
+    })
+
+    set("Statmente", {
+        fg = p.zero_red,
+    })
+
+    set("Conditional", {
+        fg = p.armor_red,
+    })
+
+    set("Repeat", {
+        fg = p.armor_red,
+    })
+
+    set("Operator", {
+        fg = p.crystal_light,
+    })
+
+    set("Type", {
+        fg = p.gold_dim,
+    })
+
+    set("StorageClass", {
+        fg = p.gold,
+    })
+
+    set("Structure", {
+        fg = p.gold
+    })
+
+    set("Constant", {
+        fg = p.gold,
+    })
+
+    set("PreProc", {
+        fg = p.crystal,
+    })
+
+    set("Include", {
+        fg = p.crystal,
+    })
+    
+    set("Special", {
+        fg = p.saber,
+    })
+
+    set("Delimiter", {
+        fg = p.fg_alt,
+    })
+
+    -- Misc
+    set("Error", {
+        fg   = p.error,
+        bold = true,
+    })
+
+    set("WarningMsg", {
+        fg = p.warning,
+    })
+
+    set("Todo", {
+        fg   = p.bg,
+        bg   = p.gold,
+        bold = true,
+    })
 end
 
 return M
