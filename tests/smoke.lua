@@ -36,7 +36,7 @@ local function assert_highlight(group)
     )
 end
 
-assert_highlight("DiagnosticError")
+    assert_highlight("DiagnosticError")
 assert_highlight("DiagnosticWarn")
 assert_highlight("DiagnosticUnderlineError")
 
@@ -63,6 +63,7 @@ end
 assert_fg("GitSignsAdd", palette.saber)
 assert_fg("GitSignsChange", palette.gold)
 assert_fg("GitSignsDelete", palette.error)
+assert_fg("GitSignsUntracked", palette.saber_dim)
 
 print("zero.nvim smoke test: OK\n")
 

@@ -10,7 +10,10 @@ function M.load()
 
     vim.g.colors_name = "zero"
 
+    -- Core
     require("zero.highlights").apply()
+
+    -- Syntax and semantics
     require("zero.groups.treesitter").apply()
     require("zero.groups.diagnostics").apply()
     require("zero.groups.lsp").apply()

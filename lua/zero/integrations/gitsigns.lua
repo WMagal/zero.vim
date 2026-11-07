@@ -4,22 +4,38 @@ local M = {}
 function M.apply()
     local groups = {
         -- Added lines: Z-Saber
-        GitSignsAdd = {fg = p.saber},
+        GitSignsAdd = {
+            fg = p.saber
+        },
 
         -- Modified lines: Gold
-        GitSignsChange = {fg = p.gold},
+        GitSignsChange = {
+            fg = p.gold
+        },
 
         -- Deleted lines: Zero Red
-        GitSignsDelete = {fg = p.error},
+        GitSignsDelete = {
+            fg = p.error
+        },
 
         -- Other change types
-        GitSignsChangedelete = {fg = p.armor_red},
-        GitSignsTopdelete    = {fg = p.error},
-        GitSignsUntracked    = {fg = p.saber_dim},
+        GitSignsChangedelete = {
+            fg = p.armor_red
+        },
+        GitSignsTopdelete    = {
+            fg = p.error
+        },
+        GitSignsUntracked    = {
+            fg = p.saber_dim
+        },
 
         -- Git preview
-        GitSignsAddPreview    = {fg = p.surface},
-        GitSignsDeletePreview = {fg = p.surface_light},
+        GitSignsAddPreview    = {
+            fg = p.surface
+        },
+        GitSignsDeletePreview = {
+            fg = p.surface_light
+        },
 
         -- Inline changes
         GitSignsAddInline = {
@@ -35,6 +51,12 @@ function M.apply()
         GitSignsDeleteInline = {
             fg = p.white,
             bg = p.crimson,
+        },
+
+        -- Git blame
+        GitSignsCurrentLineBlame = {
+            fg     = p.muted,
+            italic = true,
         },
     }
 
