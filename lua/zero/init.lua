@@ -20,6 +20,7 @@ function M.load()
 
     -- Plugin integrations
     require("zero.integrations.gitsigns").apply()
+    require("zero.integrations.telescope").apply()
 end
 
 return M

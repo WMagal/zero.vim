@@ -65,5 +65,17 @@ assert_fg("GitSignsChange", palette.gold)
 assert_fg("GitSignsDelete", palette.error)
 assert_fg("GitSignsUntracked", palette.saber_dim)
 
+-- Telescope
+assert_highlight("TelescopeNormal")
+assert_highlight("TelescopePromptNormal")
+assert_highlight("TelescopeResultsNormal")
+assert_highlight("TelescopePreviewNormal")
+
+assert_fg("TelescopePromptBorder", palette.zero_red)
+assert_fg("TelescopePromptPrefix", palette.saber)
+assert_fg("TelescopeSelectionCaret", palette.saber)
+assert_fg("TelescopeMatching", palette.saber_glow)
+assert_fg("TelescopePreviewTitle", palette.bg)
+
 print("zero.nvim smoke test: OK\n")
 
