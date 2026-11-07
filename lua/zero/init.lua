@@ -12,6 +12,8 @@ function M.load()
 
     require("zero.highlights").apply()
     require("zero.groups.treesitter").apply()
+    require("zero.groups.diagnostics").apply()
+    require("zero.groups.lsp").apply()
 end
 
 return M
