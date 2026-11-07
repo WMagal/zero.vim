@@ -45,4 +45,24 @@ assert_highlight("@lsp.type.parameter")
 
 assert_highlight("LspSignatureActiveParameter")
 
+local function assert_fg(group, hex)
+    local hl = vim.api.nvim_get_hl(0, {
+        name = group,
+        link = false,
+    })
+
+
+    local expected = tonumber(hex:sub(2), 16)
+
+    assert(
+        hl.fg == expected,
+        group .. " has an unexpected foreground color"
+    )
+end
+
+assert_fg("GitSignsAdd", palette.saber)
+assert_fg("GitSignsChange", palette.gold)
+assert_fg("GitSignsDelete", palette.error)
+
 print("zero.nvim smoke test: OK\n")
+
