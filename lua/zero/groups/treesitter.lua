@@ -86,7 +86,7 @@ function M.apply()
         fg = p.crystal,
     })
 
-    set("@functioni.method.call", {
+    set("@function.method.call", {
         fg = p.crystal_light,
     })
 
